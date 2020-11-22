@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sugarcane Production Predictor</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="https://spng.pngfind.com/pngs/s/456-4567235_sugarcane-perennial-grass-of-the-family-poaceae-sugar.png" type="image/gif" sizes="16x16">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+        body{
+          background-color:#0a0b1b;
+        }
+		table, th, td {
+  			border: 1px solid black;
+  			border-collapse: collapse;
+			border-color: antiquewhite;
+		}
+</style>
+</head>
+<body>
+	<div class="container  fileuploader " style="margin-top: 10%">
+		<div class="row justify-content-center">
+			<h1 style="color:orange;">Sugarcane Production Predictor</h1>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<form action="\" method="post">
+ 				 		 <div class="form-group">
+								<h6 style="color: white;">Enter crop area (Hectares): </h6>
+								<input type="number" name="area" required placeholder="Enter area">
+								<p style="font-size: smaller; color: white;">Ex:- 2229261 </p><br>
+ 					  		 <label for="exampleFormControlSelect1" style="color: aliceblue;" >Select an Year</label>
+  								   <select name="year"class="form-control" id="exampleFormControlSelect1">
+									<option value="2015">2015</option>
+									<option value="2016">2016</option>
+									<option value="2017">2017</option>
+     								 <option value="2018">2018</option>
+     								 <option value="2019">2019</option>
+     								 <option value="2020">2020</option>
+									 <option value="2021">2021</option>
+									 <option value="2022">2022</option>
+									 <option value="2023">2023</option>
+									 <option value="2024">2024</option>
+									 <option value="2025">2025</option>
+     								</select>
+  					  	</div>
+  					  	<input type="submit" value="PREDICT" name="predict" class="btn btn-primary form-group">
+				  </form>
+				  
+  			</div>
+  		</div>
+  		</div>
+		</div>
+	</div>
+	<div class="container  fileuploader " style="margin-top: 2%">
+		<div class="row justify-content-center">
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<table style="width: 100%;">
+				{% if flag != False %}
+					<h4 style="color: aliceblue;font-weight: bold;">&nbsp; Predicted Production <span style="color: greenyellow;">{{production}}</span> Tonness</h4>
+					<tr style="color: aliceblue;font-weight: bold;">
+						<th style="text-align: center;color: aliceblue;">Year</th>
+						<th style="text-align: center;color: aliceblue;">Area (Hectares)</th> 
+						<th style="text-align: center;color: aliceblue;">Rainfall (mm)</th>
+						<th style="text-align: center;color: aliceblue;">Production (Tonness)</th>
+				 	</tr>
+					<tr style="color: aliceblue;">
+						<td style="text-align: center;color: aliceblue;">{{year}}</td>
+						<td style="text-align: center;color: aliceblue;">{{area}}</td>
+						<td style="text-align: center;color: aliceblue;">{{rainfall}}</td>
+						<td style="text-align: center;color: aliceblue;"><span style="color: greenyellow;">{{production}}</span></td>
+					</tr>
+				{% else %}
+					
+				{% endif %}
+				</table>
+				<!-- hitwebcounter Code START -->
+				<!--a href="https://www.hitwebcounter.com" target="_blank"-->
+				<br>
+				<p style="color: aliceblue;font-weight: bold;padding-left: 50%;">Visitor Number :: <img src="https://hitwebcounter.com/counter/counter.php?page=7715403&style=0038&nbdigits=5&type=page&initCount=0" title="Web Counter" Alt="counter free"   border="0" > </p>
+				
+				 
+  			</div>
+  		</div>
+  		</div>
+		</div>
+	</div>
+
+	
+
+</body>
+</html>
