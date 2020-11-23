@@ -33,7 +33,7 @@
 				<form action="\" method="post">
  				 		 <div class="form-group">
 								<h6 style="color: white;">Enter crop area (Hectares): </h6>
-								<input type="number" name="area" required placeholder="Enter area">
+								<input type="text" name="area" required placeholder="Enter area" minlength="7" >
 								<p style="font-size: smaller; color: white;">Ex:- 2229261 </p><br>
  					  		 <label for="exampleFormControlSelect1" style="color: aliceblue;" >Select an Year</label>
   								   <select name="year"class="form-control" id="exampleFormControlSelect1">
@@ -64,7 +64,7 @@
 		<div class="row justify-content-center">
 			<div class="col-md-6">
 				<table style="width: 100%;">
-				{% if flag != False %}
+				{% if flag == 1 %}
 					<h4 style="color: aliceblue;font-weight: bold;">&nbsp; Predicted Production <span style="color: greenyellow;">{{production}}</span> Tonnes</h4>
 					<tr style="color: aliceblue;font-weight: bold;">
 						<th style="text-align: center;color: aliceblue;">Year</th>
@@ -80,8 +80,17 @@
 					</tr>
 				{% else %}
 					
+					
 				{% endif %}
 				</table>
+				{% if flag == 'num' %}
+				<script>
+
+					alert("please enter area in number Ex:12341234");
+
+				</script>
+				{% else %}
+				{% endif %}
 				<!-- hitwebcounter Code START -->
 				<!--a href="https://www.hitwebcounter.com" target="_blank"-->
 				<br>
